@@ -1,0 +1,25 @@
+class TimedDeath : ZilchComponent
+{
+    [Property]
+    var Lifetime : Real = 1.0;
+    
+    var Timer : Real;
+    
+    function Initialize(init : CogInitializer)
+    {
+        this.Timer = this.Lifetime;
+        
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        
+        this.Timer -= event.Dt;
+        
+        if(this.Timer <= 0.0)
+        {
+            this.Owner.Destroy();
+        }
+    }
+}

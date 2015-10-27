@@ -1,0 +1,29 @@
+class DamageEnemy : ZilchComponent
+{
+    var Health : Real = 5.0;
+    function Initialize(init : CogInitializer)
+    {
+        //Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+        Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStart);
+    }
+
+    function OnCollisionStart(event : CollisionEvent)
+    {
+        Console.WriteLine("collision");
+    var otherObject = event.OtherObject;
+    Console.WriteLine(this.Owner.Name);
+    if (this.Owner.Name == "Enemy")
+    {
+    Console.WriteLine("Collision");
+    if(otherObject.ArchetypeName == "Ball")
+    {
+        Console.WriteLine("boom");
+        this.Health -=1;
+        if(this.Health ==0.0)
+        {
+            this.Owner.Destroy();
+        }
+    }
+}
+}
+}

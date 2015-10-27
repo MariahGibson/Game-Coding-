@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "EditButtonSpawner",
+		uint64 ResourceId = 563eecb97d6a84ce,
+	},
+},

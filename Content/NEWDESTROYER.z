@@ -1,0 +1,16 @@
+class NEWDESTROYER : ZilchComponent
+{
+    var Time : Real = 0.0;
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    { this.Time += event.Dt;
+        if(this.Time >= 3)
+    {
+        this.Owner.Destroy();
+    }
+    }
+}

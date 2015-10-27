@@ -1,0 +1,26 @@
+class Collisions : ZilchComponent
+{
+    var Health : Real = 1.0;
+    function Initialize(init : CogInitializer)
+    {
+        //Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+        Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStart);
+    }
+    function OnCollisionStart(event : CollisionEvent)
+    {
+        var otherObject = event.OtherObject;
+        if(this.Owner.Name == "HarryFurnop")
+        if(this.Owner.Name == "Enemy")
+        {
+            Console.WriteLine("Collision");
+            if(otherObject.ArchetypeName == "Ball")
+        {
+                this.Health -= 1;
+                if(this.Health == 0.0)
+                {
+                    this.Owner.Destroy();
+                    }
+            }
+            }
+    }
+}

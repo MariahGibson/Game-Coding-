@@ -1,0 +1,20 @@
+ImageContent = 
+{
+	SpriteSourceBuilder = 
+	{
+		string Name = "Ruler [Bullet]",
+		uint64 ResourceId = 5632e2189f44ca10,
+		uint64 AtlasId = 5274cf95e4a661fd,
+		uint FrameSizeX = 26,
+		uint FrameSizeY = 171,
+		uint FrameCount = 1,
+		float FrameDelay = 0.0833333358,
+		float OriginX = 13,
+		float OriginY = 85,
+		float PixelsPerUnit = 64,
+		bool Smoothing = false,
+		bool Looping = true,
+		Vec4 Slices = [0, 0, 0, 0],
+		SpriteFill Fill = Stretch,
+	},
+},
